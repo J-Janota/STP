@@ -1,5 +1,5 @@
-const labels = document.querySelectorAll('.navbar-list-item .label');
-const authIcons = document.querySelectorAll('.authIcon');
+const labels = document.querySelectorAll('.label');
+const hideUnder768 = document.querySelectorAll('.hideUnder768');
 
 function addHiddenClass(el) {
   el.classList.add('hidden');
@@ -16,13 +16,13 @@ function checkScreenSize() {
     labels.forEach(l => addHiddenClass(l));
 
     // show icons only
-    authIcons.forEach(i => removeHiddenClass(i));
+    hideUnder768.forEach(i => removeHiddenClass(i));
   } else {
     // show labels
     labels.forEach(l => removeHiddenClass(l));
 
     // hide icons
-    authIcons.forEach(i => addHiddenClass(i));
+    hideUnder768.forEach(i => addHiddenClass(i));
   }
 }
 

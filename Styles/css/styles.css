@@ -26,6 +26,10 @@ body {
   display: none !important;
 }
 
+.alwaysShow {
+  display: block !important;
+}
+
 nav {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -51,7 +55,8 @@ nav ul {
   display: flex;
   gap: 3rem;
 }
-nav ul li {
+nav ul li.navbar-list-item a.navbar-link {
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,13 +64,14 @@ nav ul li {
   box-sizing: border-box;
   padding: 0 1rem;
   border-radius: 0.5rem;
+  color: var(--text-color-dark);
 }
-nav ul li p {
+nav ul li.navbar-list-item a.navbar-link .label {
   text-decoration: none;
   color: var(--text-color-dark);
   font-weight: 500;
 }
-nav ul li:hover {
+nav ul li.navbar-list-item a.navbar-link:hover {
   cursor: pointer;
   background-color: var(--secondary-color);
 }
@@ -77,12 +83,15 @@ nav ul li:hover {
   nav ul li {
     padding: 0 0.5rem;
   }
-  nav ul li p {
+  nav ul li .label {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 425px) {
-  nav h1 {
+  nav {
+    padding: 0 1rem;
+  }
+  nav .hero {
     font-size: 1rem;
   }
   nav ul {
@@ -91,7 +100,7 @@ nav ul li:hover {
   nav ul li {
     padding: 0 0.25rem;
   }
-  nav ul li p {
+  nav ul li .label {
     font-size: 0.8rem;
   }
 }

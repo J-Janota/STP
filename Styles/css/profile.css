@@ -1,0 +1,131 @@
+:root {
+  --primary-color: #28bdbd;
+  --secondary-color: #f1b742;
+  --background-color: #f1f9f9;
+  --text-color-dark: #000000;
+  --text-color-light: #8d8d8d;
+  --text-color-white: #ffffff;
+  --font-family: "Roboto", sans-serif;
+}
+
+nav {
+  box-shadow: none;
+  background-color: var(--background-color);
+  padding: 0 1rem;
+}
+nav ul {
+  padding: 0;
+}
+nav ul li.navbar-list-item {
+  padding: 0 0.5rem;
+}
+nav ul li.navbar-list-item a.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color-dark);
+}
+nav ul li.navbar-list-item a.navbar-link .label {
+  color: var(--text-color-dark);
+  font-weight: 500;
+}
+nav ul li.navbar-list-item:hover a.navbar-link {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+main .container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container h1 {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+main .container .profileSection {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #d4dfdf;
+  width: 100%;
+  box-sizing: border-box;
+}
+main .container .profileSection .profileInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 0.25rem;
+}
+main .container .profileSection .profileInfo .profileInfoCaregory {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color-light);
+  margin: 0;
+}
+main .container .profileSection .profileInfo .profileInfoValue {
+  font-size: 1.25rem;
+  color: var(--text-color-dark);
+  font-weight: 500;
+  margin: 0;
+}
+main .container .stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+main .container .stats .statsCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #d4dfdf;
+  border-radius: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+}
+main .container .stats .statsCards .statsCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 2rem 0.5rem;
+}
+main .container .stats .statsCards .statsCard .statValue {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin: 0;
+}
+main .container .stats .statsCards .statsCard:nth-child(2) .statValue {
+  color: var(--secondary-color);
+}
+main .container .stats .statsCards .statsCard .statCategory {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+}

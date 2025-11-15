@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,44 +16,127 @@
     </script>
     <script type="module">
         import '@material/web/all.js';
-        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  </script>
-  <link rel="stylesheet" href="../Styles/css/styles.css">
+    </script>
+    <link rel="stylesheet" href="../Styles/css/styles.css">
+    <link rel="stylesheet" href="../Styles/css/dashboard.css">
 </head>
+
 <body>
-    <nav >
+    <nav>
         <!-- Navigation content -->
         <p class="hero">FlashLearn</p>
         <ul class="navbar-list">
             <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    group
-                </span>
-                <p>Community</p>
+                <a href="community.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>
+                    <p class="label">Community</p>
+                </a>
             </li>
             <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    trophy
-                </span>
-                <p>Achievments</p>
+                <a href="achievments.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined">
+                        trophy
+                    </span>
+                    <p class="label">Achievments</p>
+                </a>
             </li>
             <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    person
-                </span>
-                <p>Profile</p>
+                <a href="profile.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                    <p class="label">Profile</p>
+                </a>
             </li>
             <li class="navbar-list-item">
+                <a href="index.html" class="navbar-link unselectable">
                 <span class="material-symbols-outlined">
                     logout
                 </span>
-                <p>Logout</p>
+                <p class="label">Logout</p>
+                </a>
             </li>
         </ul>
     </nav>
     <main>
-    <script src="../Scripts/index.js"></script>
+        <h1>Welcome Back, User!</h1>
+        <section class="dashboardCards">
+            <div class="dashboardCard">
+                <a href="" class="dashboardCardLink">
+                    <span class="dashboardCardInfo">
+                        <h2>Total Decks</h2>
+                        <span class="material-symbols-outlined">
+                            import_contacts
+                        </span>
+                    </span>
+                    <span class="dashboardCardValue">67</span>
+                    <span class="additionalText">Click to view all</span>
+                </a>
+            </div>
+            <div class="dashboardCard">
+                <a href="profile.html" class="dashboardCardLink">
+                    <span class="dashboardCardInfo">
+                        <h2>Cards Studied</h2>
+                        <span class="material-symbols-outlined">
+                            trending_up
+                        </span>
+                    </span>
+                    <span class="dashboardCardValue">1,245</span>
+                    <span class="additionalText">Click to view stats</span>
+                </a>
+            </div>
+            <div class="dashboardCard">
+                <a href="" class="dashboardCardLink">
+                                    <span class="dashboardCardInfo">
+                    <h2>Study Streak</h2>
+                    <span class="material-symbols-outlined">
+                        trophy
+                    </span>
+                </span>
+                <span class="dashboardCardValue">0 Days</span>
+                <span class="additionalText">🔥 Keep it going!</span>
+                </a>
+            </div>
+            <div class="dashboardCard">
+                <a href="" class="dashboardCardLink">
+                        <span class="dashboardCardInfo">
+                            <h2>Achiements</h2>
+                            <span class="material-symbols-outlined">
+                            trophy
+                        </span>
+                    </span>
+                    <span class="dashboardCardValue">0 Days</span>
+                    <span class="additionalText">Click to view all</span>
+                </a>
+            </div>
+        </section>
+        <section class="myDecks">
+            <span class="myDecksInfo">
+                <h2>My Decks</h2>
+                <a class="addDeckButton">
+                    <span class="material-symbols-outlined hideUnder768 alwaysShow">
+                        add
+                    </span>
+                    <p class="label">New Deck</p>
+                </a>
+            </span>
+            <div class="deckList">
+                <!-- Deck items will be dynamically added here -->
+                 <div class="noDecksPlaceholder">
+                    <span class="material-symbols-outlined">
+                        import_contacts
+                    </span>
+                    <p>No decks yet. Create your first one!</p>
+                 </div>
+            </div>
+        </section>
+    </main>
+        <script src="../Scripts/index.js"></script>
 </body>
+
 </html>

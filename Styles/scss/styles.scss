@@ -5,7 +5,7 @@
     --text-color-dark: #000000;
     --text-color-light: #8d8d8d;
     --text-color-white: #ffffff;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -27,6 +27,9 @@ body {
     display: none !important;
 }
 
+.alwaysShow {
+    display: block !important;
+}
 
 nav {
     background-color: white;
@@ -53,22 +56,26 @@ nav {
         display: flex;
         gap: 3rem;
 
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-sizing: border-box;
-            padding: 0 1rem;
-            border-radius: 0.5rem;
-            p {
+        li.navbar-list-item {
+            a.navbar-link {
                 text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                box-sizing: border-box;
+                padding: 0 1rem;
+                border-radius: 0.5rem;
                 color: var(--text-color-dark);
-                font-weight: 500;
-            }
-            &:hover {
-                cursor: pointer;
-                background-color: var(--secondary-color);
+                .label {
+                    text-decoration: none;
+                    color: var(--text-color-dark);
+                    font-weight: 500;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--secondary-color);
+                }
             }
         }
     }
@@ -79,7 +86,7 @@ nav {
         gap: 1rem;
         li {
             padding: 0 0.5rem;
-            p {
+            .label {
                 font-size: 0.9rem;
             }
         }
@@ -88,18 +95,18 @@ nav {
 
 @media (max-width: 425px) {
     nav {
-        h1 {
-        font-size: 1rem;
+        padding: 0 1rem;
+        .hero {
+            font-size: 1rem;
         }
         ul {
             gap: 0.5rem;
             li {
                 padding: 0 0.25rem;
-                p {
+                .label {
                     font-size: 0.8rem;
                 }
             }
         }
     }
-    
 }
