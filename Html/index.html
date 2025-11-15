@@ -19,40 +19,61 @@
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
-  <link rel="stylesheet" href="../Styles/styles.css">
+  <link rel="stylesheet" href="../Styles/css/styles.css">
+  <link rel="stylesheet" href="../Styles/css/frontpage.css">
 </head>
 <body>
     <nav>
         <!-- Navigation content -->
-        <h1>FlashLearn</h1>
+        <p class="hero unselectable">FlashLearn</p>
         <ul class="navbar-list">
             <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    group
-                </span>
-                <p>Community</p>
+                <a href="login.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined infoIcon hidden authIcon">
+                        login
+                    </span>
+                    <p class="label">Login</p>
+                </a>
             </li>
+
             <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    trophy
-                </span>
-                <p>Achievments</p>
-            </li>
-            <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    person
-                </span>
-                <p>Profile</p>
-            </li>
-            <li class="navbar-list-item">
-                <span class="material-symbols-outlined">
-                    logout
-                </span>
-                <p>Logout</p>
+                <a href="signup.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined infoIcon hidden authIcon">
+                        how_to_reg
+                    </span>
+                    <p class="label">Sign Up</p>
+                </a>
             </li>
         </ul>
     </nav>
     <main>
+        <h1>Master Any Subject with Smart Flashcards</h1>
+        <h2>Study smarter with adaptive flashcards that focus on what you need to learn most</h2>
+        <a href="signup.html" class="get-started-button unselectable">Get Started</a>
+        <section class="infoCards">
+            <div class="infoCard">
+                <span class="material-symbols-outlined infoIcon unselectable">
+                    neurology
+                </span>
+                <h3>Adaptive Learning</h3>
+                <p>Our flashcards adapt to your learning pace, ensuring you focus on areas that need improvement.</p>
+            </div>
+            <div class="infoCard">
+                <span class="material-symbols-outlined infoIcon unselectable">
+                    bolt
+                </span>
+                <h3>Progress Tracking</h3>
+                <p>Monitor your learning journey with detailed progress reports and insights.</p>
+            </div>
+            <div class="infoCard">
+                <span class="material-symbols-outlined infoIcon unselectable">
+                    trending_up
+                </span>
+                <h3>Community Support</h3>
+                <p>Join a community of learners, share flashcards, and collaborate for better results.</p>
+            </div>
+        </section>
+    </main>
     <script src="../Scripts/index.js"></script>
 </body>
 </html>

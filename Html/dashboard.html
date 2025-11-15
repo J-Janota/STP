@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script type="importmap">
+        {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <link rel="stylesheet" href="../Styles/css/styles.css">
+</head>
+<body>
+    <nav >
+        <!-- Navigation content -->
+        <p class="hero">FlashLearn</p>
+        <ul class="navbar-list">
+            <li class="navbar-list-item">
+                <span class="material-symbols-outlined">
+                    group
+                </span>
+                <p>Community</p>
+            </li>
+            <li class="navbar-list-item">
+                <span class="material-symbols-outlined">
+                    trophy
+                </span>
+                <p>Achievments</p>
+            </li>
+            <li class="navbar-list-item">
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+                <p>Profile</p>
+            </li>
+            <li class="navbar-list-item">
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                <p>Logout</p>
+            </li>
+        </ul>
+    </nav>
+    <main>
+    <script src="../Scripts/index.js"></script>
+</body>
+</html>
