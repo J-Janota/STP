@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Styles/css/styles.css">
+    <link rel="stylesheet" href="../Styles/css/achievements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <!-- Navigation content -->
+        <ul class="navbar-list">
+            <li class="navbar-list-item">
+                <a href="dashboard.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                    <p class="label">Back to Dashboard</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Achievements</h1>
+        <section class="summaryCards">
+            <div class="summaryCard">
+                <span class="summaryCardInfo">
+                    <h2>Total Unlocked</h2>
+                    <span class="material-symbols-outlined">
+                        trophy
+                    </span>
+                </span>
+                <span class="summaryCardValue">0/9</span>
+                <span class="progressBar"></span>
+            </div>
+            <div class="summaryCard">
+                <span class="summaryCardInfo">
+                    <h2>Current Streak</h2>
+                    <span class="material-symbols-outlined">
+                        local_fire_department
+                    </span>
+                </span>
+                <span class="summaryCardValue">0 days</span>
+                <span class="additionalText">Longest: 0 Days</span>
+            </div>
+            <div class="summaryCard">
+                <span class="summaryCardInfo">
+                    <h2>Cards Studied</h2>
+                    <span class="material-symbols-outlined">
+                        import_contacts
+                    </span>
+                </span>
+                <span class="summaryCardValue">0</span>
+                <span class="additionalText">0 sessions</span>
+            </div>
+        </section>
+        <ul class="achievementFilter">
+            <li class="achievementFilterItem unselectable">
+                <button class=" filterButton active">All</button>
+            </li>
+            <li class="achievementFilterItem unselectable">
+                <button class="filterButton">Study</button>
+            </li>
+            <li class="achievementFilterItem unselectable">
+                <button class="filterButton">Streak</button>
+            </li>
+            <li class="achievementFilterItem unselectable">
+                <button class="filterButton">Social</button>
+            </li>
+            <li class="achievementFilterItem unselectable">
+                <button class="filterButton">Mastery</button>
+            </li>
+        </ul>
+        <section class="achievementCards">
+            <div class="achievementCard studyCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    import_contacts
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>First Steps</h2>
+                    <p>Study your first flashcard</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard studyCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    neurology
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Dedicated Learner</h2>
+                    <p>Study 50 flashcards</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard studyCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    school
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Knowledge Seeker</h2>
+                    <p>Study 200 flashcards</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard streakCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    local_fire_department
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Streak Starter</h2>
+                    <p>Maintain a 3-day study streak</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard streakCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    workspace_premium
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Week Warrior</h2>
+                    <p>Maintain a 7-day study streak</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard streakCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    trophy
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Unstoppable</h2>
+                    <p>Maintain a 30-day study streak</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard socialCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    add
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Deck Creator</h2>
+                    <p>Create your first deck</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard socialCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    newsstand
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Curator</h2>
+                    <p>Create 5 decks</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            <div class="achievementCard masteryCard">
+                <span class="material-symbols-outlined achievementIcon">
+                    kid_star
+                </span>
+                <span class="summaryCardInfo">
+                    <h2>Perfectionist</h2>
+                    <p>Score perfect on a deck</p>
+                </span>
+                <span class="progressBar"></span>
+                <span class="percentageProgress">0% complete</span>
+            </div>
+
+            </div>
+        </section>
+    </main>
+    <script src="../Scripts/index.js"></script>
+</body>
+
+</html>
