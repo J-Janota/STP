@@ -1,0 +1,134 @@
+nav {
+  box-shadow: none;
+  background-color: var(--background-color);
+}
+nav ul li.navbar-list-item {
+  padding: 0;
+}
+nav ul li.navbar-list-item a.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color-dark);
+}
+nav ul li.navbar-list-item a.navbar-link .label {
+  color: var(--text-color-dark);
+  font-weight: 500;
+}
+nav ul li.navbar-list-item:not(:last-child):hover a.navbar-link {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+nav ul li.navbar-list-item:last-child a.navbar-link {
+  background-color: var(--primary-color);
+}
+nav ul li.navbar-list-item:last-child a.navbar-link .label {
+  color: var(--text-color-white);
+}
+nav ul li.navbar-list-item:last-child a.navbar-link .authIcon {
+  color: var(--text-color-white);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+main h1 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+main h2 {
+  text-align: center;
+  color: var(--text-color-light);
+  font-weight: 400;
+}
+main a.get-started-button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-white);
+  border: none;
+  text-decoration: none;
+}
+main a.get-started-button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+main .infoCards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+main .infoCards .infoCard {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  width: 15rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .infoCards .infoCard:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+main .infoCards .infoCard span {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+main .infoCards .infoCard:nth-child(2) span {
+  color: var(--secondary-color);
+}
+main .infoCards .infoCard h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+main .infoCards .infoCard p {
+  color: var(--text-color-light);
+  font-weight: 200;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1.5rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  nav ul li {
+    padding: 0 1rem;
+  }
+  nav ul li p {
+    font-size: 0.9rem;
+  }
+  main {
+    padding: 0 2rem;
+  }
+  main h1 {
+    font-size: 2.5rem;
+  }
+  main h2 {
+    font-size: 1rem;
+  }
+}

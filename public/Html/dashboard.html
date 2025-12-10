@@ -53,8 +53,8 @@
                     <p class="label hideUnder768">Profile</p>
                 </a>
             </li>
-            <li class="navbar-list-item">
-                <a href="index.html" class="navbar-link unselectable">
+            <li class="navbar-list-item logOutButton">
+                <a class="navbar-link unselectable">
                     <span class="material-symbols-outlined">
                         logout
                     </span>
@@ -137,6 +137,27 @@
         </section>
     </main>
     <script src="../Scripts/index.js"></script>
-</body>
+    <script>
+        const logOutButton = document.querySelector('.logOutButton');
+        logOutButton.addEventListener('click', async () => {
+            try {
+                const res = await fetch('/logout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'   // ✅ important!
+                });
 
+
+                if (res.ok) {
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Logout failed');
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Something went wrong");
+            }
+        });
+    </script>
+</body>
 </html>

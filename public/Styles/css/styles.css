@@ -1,0 +1,113 @@
+:root {
+  --primary-color: #28bdbd;
+  --secondary-color: #f1b742;
+  --background-color: #f1f9f9;
+  --text-color-dark: #000000;
+  --text-color-light: #8d8d8d;
+  --text-color-white: #ffffff;
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.alwaysShow {
+  display: block !important;
+}
+
+nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+nav .hero {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+}
+nav ul li.navbar-list-item {
+  padding: 0;
+}
+nav ul li.navbar-list-item a.navbar-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--text-color-dark);
+}
+nav ul li.navbar-list-item a.navbar-link .label {
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-weight: 500;
+}
+nav ul li.navbar-list-item a.navbar-link:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 0 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  nav ul li {
+    padding: 0 0.5rem;
+  }
+  nav ul li .label {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 425px) {
+  nav {
+    padding: 0 1rem;
+  }
+  nav .hero {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  nav ul li.navbar-list-item a.navbar-bar-link {
+    padding: 0 0.125rem;
+  }
+  nav ul li.navbar-list-item a.navbar-bar-link .label {
+    font-size: 0.8rem;
+  }
+}

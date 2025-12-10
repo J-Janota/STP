@@ -1,0 +1,124 @@
+main {
+  padding: 2rem 3rem;
+}
+main .dashboardCards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+main .dashboardCards .dashboardCard {
+  flex: 1 1 calc(25% - 2rem);
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink {
+  background-color: white;
+  padding: 0.5rem 2rem 2rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d4dfdf;
+  text-align: center;
+  min-width: 15rem;
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--text-color-dark);
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink:nth-child(3) .dashboardCardInfo .material-symbols-outlined, main .dashboardCards .dashboardCard a.dashboardCardLink:nth-child(4) .dashboardCardInfo .material-symbols-outlined {
+  color: var(--secondary-color);
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardInfo .material-symbols-outlined {
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  font-weight: 100;
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+main .dashboardCards .dashboardCard a.dashboardCardLink .additionalText {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-color-light);
+}
+main .myDecks {
+  margin-top: 4rem;
+  background-color: white;
+  border: 1px solid #d4dfdf;
+  border-radius: 1rem;
+  min-height: 20rem;
+  width: 100%;
+}
+main .myDecks .myDecksInfo {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main .myDecks .myDecksInfo h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+main .myDecks .myDecksInfo a.addDeckButton {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-white);
+  border: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+}
+main .myDecks .myDecksInfo a.addDeckButton:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+main .myDecks .deckList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .myDecks .deckList .noDecksPlaceholder {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: 1rem;
+  font-weight: 400;
+}
+main .myDecks .deckList .noDecksPlaceholder .material-symbols-outlined {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color-light);
+}

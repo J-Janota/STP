@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Styles/css/authStyles.css">
+</head>
+<body>
+    <main>
+        <form class="authForm">
+            <h1>Welcome Back</h1>
+            <h2>Login to continue</h2>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+            <a href="signup.html" class="switchAuth">Don't have an account?</a>
+        </form>
+    </main>
+    <!-- ...existing code... -->
+<script>
+  const loginForm = document.querySelector('.authForm');
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+      const res = await fetch('/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',    // ← important: allow browser to receive/set session cookie
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        // redirect to root (root will send dashboard when logged in)
+        window.location.href = '/';
+      } else {
+        alert(data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
+    }
+  });
+</script>
+<!-- ...existing code... -->
+</body>
+</html>
