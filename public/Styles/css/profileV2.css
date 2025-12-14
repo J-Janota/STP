@@ -1,0 +1,352 @@
+:root {
+  --primary-color: #28bdbd;
+  --secondary-color: #f1b742;
+  --background-color: #f1f9f9;
+  --text-color-dark: #000000;
+  --text-color-light: #8d8d8d;
+  --text-color-white: #ffffff;
+  --level-purple: #9952e0;
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100dw;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+body main .container .profileHero {
+  border-radius: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #e8f9f8, #f4eefd);
+  border: 1px solid #d4dfdf;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+body main .container .profileHero .profileInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+}
+body main .container .profileHero .profileInfo .profilePictureContainer {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1.5rem;
+  background-color: #d4dfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .profileHero .profileInfo .profilePictureContainer i {
+  font-size: 5rem;
+  color: black;
+}
+body main .container .profileHero .profileInfo .profileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin: 0;
+  margin-block-start: 0;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer .editProfileButton {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer .editProfileButton:hover {
+  background-color: var(--primary-color-dark);
+}
+body main .container .profileHero .profileLevel {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  text-align: right;
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileLevel .levelBox {
+  margin-right: 0.5rem;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileLevel .levelBox:hover {
+  cursor: default;
+  background-color: var(--primary-color);
+}
+body main .container .profileHero .profileLevel .levelTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--level-purple);
+  margin: 0;
+  width: 100%;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress .currentLevelProgressNumerical {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+  margin-block-start: 0.25rem;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress .currentLevelProgressBar {
+  min-width: 200px;
+  height: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: var(--secondary-color);
+}
+body main .container .profileHero .profileLevel .totalXP {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+  width: 100%;
+}
+body main .container .profileNav {
+  width: 100%;
+  background-color: #e9efee;
+  border-radius: 0.5rem;
+}
+body main .container .profileNav .profileNavList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  padding: 0.25rem;
+  box-sizing: border-box;
+}
+body main .container .profileNav .profileNavList li.profileNavListItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-color-light);
+}
+body main .container .profileNav .profileNavList .active {
+  background-color: #f8fafb;
+  color: var(--text-color-dark) !important;
+}
+body main .container .profileStatistics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fefffe;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+body main .container .profileStatistics h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileStatistics .statsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+}
+body main .container .profileStatistics .statsContainer .statsItem {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #f3f7f7;
+  margin: 0 0.5rem;
+  padding: 1rem 0.75rem;
+  border-radius: 0.5rem;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemIconContainer {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 20%;
+  background-color: #d4dfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemIconContainer i {
+  font-size: 1.5rem;
+  color: black;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo .statItemValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo .statItemLabel {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(1) .statItemIconContainer {
+  background-color: rgba(40, 189, 189, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(1) i {
+  color: #28bdbd;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(2) .statItemIconContainer {
+  background-color: rgba(80, 200, 120, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(2) i {
+  color: #50C878;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(3) .statItemIconContainer {
+  background-color: rgba(255, 140, 0, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(3) i {
+  color: #FF8C00;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(4) .statItemIconContainer {
+  background-color: rgba(241, 183, 66, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(4) i {
+  color: #f1b742;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(5) .statItemIconContainer {
+  background-color: rgba(153, 82, 224, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(5) i {
+  color: #9952e0;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(6) .statItemIconContainer {
+  background-color: rgba(40, 189, 189, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(6) i {
+  color: #28bdbd;
+}
+body main .container .profileStatistics .statsContainer .statsItem:hover {
+  background-color: #e8eeee;
+  transition: 0.3s;
+}
+body main .container .profileAchievements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fefffe;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+body main .container .profileAchievements .profileAchievementsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+body main .container .profileAchievements .profileAchievementsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileAchievements .profileAchievementsHeader .profileAchievementsCount {
+  background-color: var(--secondary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+body main .container .profileAchievements .achievementsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f7f7;
+  margin: 0 0.5rem;
+  padding: 1rem 0.75rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemIconContainer {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #d4dfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemIconContainer i {
+  font-size: 1.25rem;
+  color: black;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  gap: 0.5rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemInfo .achievementItemLabel {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+}/*# sourceMappingURL=profileV2.css.map */

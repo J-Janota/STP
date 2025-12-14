@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Styles/css/reset.css">
+    <link rel="stylesheet" href="../Styles/css/styles.css">
+    <link rel="stylesheet" href="../Styles/css/profileV2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="mainNav">
+        <!-- Navigation content -->
+        <ul class="navbar-list">
+            <li class="navbar-list-item">
+                <a href="dashboard.html" class="navbar-link unselectable">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                    <p class="label">Back to Dashboard</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <section class="profileHero">
+                <section class="profileInfo">
+                    <div class="profilePictureContainer">
+                        <i class="material-symbols-outlined profilePicIcon">person</i>
+                    </div>
+                    <div class="profileDetails">
+                        <span class="profileNameEditContainer">
+                            <p class="profileScreenname">Username</p>
+                            <i class="material-symbols-outlined" id="userInfoEditBtn">edit</i>
+                        </span>
+                        <p class="profileUsername">@username</p>
+                        <p class="profileBio">No bio yet. Click edit to add one!</p>
+                    </div>
+                </section>
+                <section class="profileLevel">
+                    <div class="levelBox">
+                        <i class="material-symbols-outlined">stars_2</i>
+                        <p class="levelText" id="levelValue">Level 1</p>
+                    </div>
+                    <p class="levelTitle">Novice Learner</p>
+                    <div class="currentLevelProgress">
+                        <div class="currentLevelProgressNumerical" id="levelProgressNumerical">0 / 100 XP</div>
+                        <div class="currentLevelProgressBar" id="levelProgressBar"></div>
+                    </div>   
+                    <p class="totalXP">0 Total XP</p>
+                </section>
+            </section>
+            <nav class="profileNav">
+                <ul class="profileNavList">
+                    <li class="profileNavListItem active">
+                        <i class="material-symbols-outlined">overview</i>
+                        <p>Overview</p>
+                    </li>
+                    <li class="profileNavListItem">
+                        <i class="material-symbols-outlined">trophy</i>
+                        <p>Achievements</p>
+                    </li>
+                    <li class="profileNavListItem">
+                        <i class="material-symbols-outlined">group</i>
+                        <p>Social</p>
+                    </li>
+                    <li class="profileNavListItem">
+                        <i class="material-symbols-outlined">settings</i>
+                        <p>Settings</p>
+                    </li>
+                </ul>
+            </nav>
+        <div class="profileStatistics">
+            <h2>Study Statistics</h2>
+            <div class="statsContainer">
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="statsItem">
+                    <div class="statItemIconContainer">
+                        <i class="material-symbols-outlined">book</i>
+                    </div>
+                    <div class="statItemInfo">
+                        <p class="statItemValue" id="totalCardsStudied">0</p>
+                        <p class="statItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profileAchievements">
+            <div class="profileAchievementsHeader">            
+                <h2>Achievements</h2>
+                <p class="profileAchievementsCount">0 / 9</p>
+            </div>
+            <div class="achievementsContainer">
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+                <div class="achievementItem">
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                    </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
