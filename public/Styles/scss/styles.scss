@@ -16,6 +16,12 @@ body {
     width: 100dvw;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .unselectable {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -31,10 +37,10 @@ body {
     display: block !important;
 }
 
-nav {
-    background-color: white;
+.mainNav {
+    background-color: #fbfdfc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: 2rem;
+    min-height: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,14 +57,14 @@ nav {
         font-weight: 500;
         color: var(--primary-color);
     }
-    ul {
+    ul.navbar-list {
         list-style: none;
         display: flex;
         gap: 3rem;
         padding: 0;
+        height: 100%;
 
         li.navbar-list-item {
-            padding: 0;
             a.navbar-link {
                 text-decoration: none;
                 display: flex;
@@ -69,10 +75,13 @@ nav {
                 padding: 0 0.5rem;
                 border-radius: 0.5rem;
                 color: var(--text-color-dark);
+                
                 .label {
                     text-decoration: none;
                     color: var(--text-color-dark);
                     font-weight: 500;
+                    margin-block-end: 1rem;
+                    margin-block-start: 1rem;
                 }
                 &:hover {
                     cursor: pointer;

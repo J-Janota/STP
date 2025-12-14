@@ -1,10 +1,19 @@
 main {
   padding: 2rem 3rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+main h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
 }
 main .dashboardCards {
   display: flex;
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -15,7 +24,7 @@ main .dashboardCards .dashboardCard {
 }
 main .dashboardCards .dashboardCard a.dashboardCardLink {
   background-color: white;
-  padding: 0.5rem 2rem 2rem 2rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   border-radius: 0.5rem;
   border: 1px solid #d4dfdf;
   text-align: center;
@@ -28,6 +37,7 @@ main .dashboardCards .dashboardCard a.dashboardCardLink {
   box-sizing: border-box;
   text-decoration: none;
   color: var(--text-color-dark);
+  gap: 0.5rem;
 }
 main .dashboardCards .dashboardCard a.dashboardCardLink:nth-child(3) .dashboardCardInfo .material-symbols-outlined, main .dashboardCards .dashboardCard a.dashboardCardLink:nth-child(4) .dashboardCardInfo .material-symbols-outlined {
   color: var(--secondary-color);
@@ -46,6 +56,13 @@ main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardInfo {
   font-size: 0.75rem;
   font-weight: 300;
 }
+main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardInfo h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
 main .dashboardCards .dashboardCard a.dashboardCardLink .dashboardCardInfo .material-symbols-outlined {
   font-size: 1.25rem;
   color: var(--text-color-light);
@@ -63,12 +80,14 @@ main .dashboardCards .dashboardCard a.dashboardCardLink .additionalText {
   color: var(--text-color-light);
 }
 main .myDecks {
-  margin-top: 4rem;
+  margin-top: 2rem;
   background-color: white;
   border: 1px solid #d4dfdf;
   border-radius: 1rem;
-  min-height: 20rem;
+  min-height: 25rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 main .myDecks .myDecksInfo {
   padding: 1rem 2rem;
@@ -85,7 +104,7 @@ main .myDecks .myDecksInfo h2 {
   color: var(--text-color-dark);
 }
 main .myDecks .myDecksInfo a.addDeckButton {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
   font-weight: 500;
   border-radius: 0.5rem;
@@ -109,6 +128,7 @@ main .myDecks .deckList {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 main .myDecks .deckList .noDecksPlaceholder {
   padding: 2rem;
@@ -121,4 +141,4 @@ main .myDecks .deckList .noDecksPlaceholder .material-symbols-outlined {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--text-color-light);
-}
+}/*# sourceMappingURL=dashboard.css.map */

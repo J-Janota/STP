@@ -1,38 +1,35 @@
-nav {
-  box-shadow: none;
+.mainNav {
   background-color: var(--background-color);
+  box-shadow: none;
 }
-nav ul li.navbar-list-item {
-  padding: 0;
-}
-nav ul li.navbar-list-item a.navbar-link {
+.mainNav ul li.navbar-list-item a.navbar-link {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0.5rem 2rem;
   border-radius: 0.5rem;
   height: 2.5rem;
   width: 100%;
   text-decoration: none;
   color: var(--text-color-dark);
 }
-nav ul li.navbar-list-item a.navbar-link .label {
+.mainNav ul li.navbar-list-item a.navbar-link .label {
   color: var(--text-color-dark);
   font-weight: 500;
 }
-nav ul li.navbar-list-item:not(:last-child):hover a.navbar-link {
+.mainNav ul li.navbar-list-item:not(:last-child):hover a.navbar-link {
   background-color: var(--secondary-color);
   cursor: pointer;
 }
-nav ul li.navbar-list-item:last-child a.navbar-link {
+.mainNav ul li.navbar-list-item:last-child a.navbar-link {
   background-color: var(--primary-color);
 }
-nav ul li.navbar-list-item:last-child a.navbar-link .label {
+.mainNav ul li.navbar-list-item:last-child a.navbar-link .label {
   color: var(--text-color-white);
 }
-nav ul li.navbar-list-item:last-child a.navbar-link .authIcon {
+.mainNav ul li.navbar-list-item:last-child a.navbar-link .authIcon {
   color: var(--text-color-white);
 }
 
@@ -42,10 +39,12 @@ main {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
+  gap: 2rem;
 }
 main h1 {
   font-size: 3.5rem;
   text-align: center;
+  font-weight: bold;
 }
 main h2 {
   text-align: center;
@@ -53,7 +52,6 @@ main h2 {
   font-weight: 400;
 }
 main a.get-started-button {
-  margin-top: 2rem;
   padding: 0.75rem 2rem;
   font-size: 1.25rem;
   font-weight: 500;
@@ -69,9 +67,9 @@ main a.get-started-button:hover {
   cursor: pointer;
 }
 main .infoCards {
+  margin-top: 2rem;
   display: flex;
   gap: 2rem;
-  margin-top: 4rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -87,6 +85,7 @@ main .infoCards .infoCard {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 main .infoCards .infoCard:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -131,4 +130,4 @@ main .infoCards .infoCard p {
   main h2 {
     font-size: 1rem;
   }
-}
+}/*# sourceMappingURL=frontpage.css.map */

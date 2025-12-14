@@ -20,6 +20,8 @@ router.post("/register", async (req, res) => {
       [email, hash, username]
     );
 
+    req.session.userId = user.id;
+    
     res.json({ message: "User registered" });
   } catch (err) {
     console.error(err);

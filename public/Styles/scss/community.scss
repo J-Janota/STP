@@ -11,6 +11,8 @@ main {
     padding: 2rem 3rem;
     h1 {
         margin: 1rem 0 0 0;
+        font-size: 2rem;    
+        font-weight: 600;
     }
     .filtering {
         display: flex;
@@ -19,6 +21,7 @@ main {
         flex-wrap: wrap;
         gap: 1rem;
         margin-top: 2rem;
+        width: 100%;
         .searchbar {
             position: relative;
             flex: 1;
