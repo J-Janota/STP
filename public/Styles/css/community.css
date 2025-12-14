@@ -13,6 +13,8 @@ main {
 }
 main h1 {
   margin: 1rem 0 0 0;
+  font-size: 2rem;
+  font-weight: 600;
 }
 main .filtering {
   display: flex;
@@ -21,6 +23,7 @@ main .filtering {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  width: 100%;
 }
 main .filtering .searchbar {
   position: relative;
@@ -143,4 +146,4 @@ main .filtering .dropdown.open .dropdown-content {
     width: -moz-fit-content;
     width: fit-content;
   }
-}
+}/*# sourceMappingURL=community.css.map */
