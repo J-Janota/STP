@@ -13,6 +13,33 @@
 </head>
 
 <body>
+    <script src="../Scripts/index.js"></script>
+    <div class="customizeProfileMenu hidden">
+        <div class="customizeProfileMenuContainer">
+            <h1>Customize Your Avatar</h1>
+            <div class="customizeOptions">
+                <div class="avatarOptions">
+                    <h2>Choose Your Avatar</h2>
+                    <div class="avatarOptionsContainer">
+                        <!-- Avatar options will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="backgroundColorChange">
+                    <h2>Background Color</h2>
+                    <div class="backgroundColorOptionsContainer">
+                        <!-- Background color options will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="borderStyleChange">
+                    <h2>Border Style</h2>
+                    <div class="borderStyleOptionsContainer">
+                        <!-- Border style options will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="mainNav">
         <!-- Navigation content -->
         <ul class="navbar-list">
@@ -31,15 +58,18 @@
             <section class="profileHero">
                 <section class="profileInfo">
                     <div class="profilePictureContainer">
-                        <i class="material-symbols-outlined profilePicIcon">person</i>
+                        <button class="customizeAvatarBtn hidden">
+                            <i class="material-symbols-outlined">edit</i>
+                        </button>
+                        <i class="material-symbols-outlined profilePicIcon" id="profilePicIcon">person</i>
                     </div>
                     <div class="profileDetails">
                         <span class="profileNameEditContainer">
-                            <p class="profileScreenname">Username</p>
-                            <i class="material-symbols-outlined" id="userInfoEditBtn">edit</i>
+                            <p class="profileScreenname" id="profileScreenname">Username</p>
+                            <i class="material-symbols-outlined editProfileButton" id="userInfoEditBtn">edit</i>
                         </span>
-                        <p class="profileUsername">@username</p>
-                        <p class="profileBio">No bio yet. Click edit to add one!</p>
+                        <p class="profileUsername" id="profileUsername">@username</p>
+                        <p class="profileBio" id="profileBio">No bio yet. Click edit to add one!</p>
                     </div>
                 </section>
                 <section class="profileLevel">
@@ -50,171 +80,295 @@
                     <p class="levelTitle">Novice Learner</p>
                     <div class="currentLevelProgress">
                         <div class="currentLevelProgressNumerical" id="levelProgressNumerical">0 / 100 XP</div>
-                        <div class="currentLevelProgressBar" id="levelProgressBar"></div>
-                    </div>   
-                    <p class="totalXP">0 Total XP</p>
+                        <div class="currentLevelProgressBarContainer">
+                            <div class="currentLevelProgressBar" id="levelProgressBar"></div>
+                        </div>
+
+                    </div>
+                    <p class="totalXP" id="totalXP">0 Total XP</p>
                 </section>
             </section>
             <nav class="profileNav">
                 <ul class="profileNavList">
                     <li class="profileNavListItem active">
                         <i class="material-symbols-outlined">overview</i>
-                        <p>Overview</p>
+                        <p class="profileNavListItemLabel">Overview</p>
                     </li>
-                    <li class="profileNavListItem">
+                    <li class="profileNavListItem ">
                         <i class="material-symbols-outlined">trophy</i>
-                        <p>Achievements</p>
+                        <p class="profileNavListItemLabel">Achievements</p>
                     </li>
                     <li class="profileNavListItem">
                         <i class="material-symbols-outlined">group</i>
-                        <p>Social</p>
+                        <p class="profileNavListItemLabel">Social</p>
                     </li>
                     <li class="profileNavListItem">
                         <i class="material-symbols-outlined">settings</i>
-                        <p>Settings</p>
+                        <p class="profileNavListItemLabel">Settings</p>
                     </li>
                 </ul>
             </nav>
-        <div class="profileStatistics">
-            <h2>Study Statistics</h2>
-            <div class="statsContainer">
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
+            <section class="profileStatistics overviewSection">
+                <h2>Study Statistics</h2>
+                <div class="statsContainer">
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">book</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="totalCardsStudied">0</p>
+                            <p class="statItemLabel">Cards Studied</p>
+                        </div>
                     </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">target</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="studiedToday">0</p>
+                            <p class="statItemLabel">Studied Today</p>
+                        </div>
                     </div>
-                </div>
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">heat</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="currentStreak">0</p>
+                            <p class="statItemLabel">Current Streak</p>
+                        </div>
                     </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">trophy</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="longestStreak">0</p>
+                            <p class="statItemLabel">Longest Streak</p>
+                        </div>
                     </div>
-                </div>
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">calendar_month</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="studySessions">0</p>
+                            <p class="statItemLabel">Study Sessions</p>
+                        </div>
                     </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
-                    </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
-                    </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-                <div class="statsItem">
-                    <div class="statItemIconContainer">
-                        <i class="material-symbols-outlined">book</i>
-                    </div>
-                    <div class="statItemInfo">
-                        <p class="statItemValue" id="totalCardsStudied">0</p>
-                        <p class="statItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="profileAchievements">
-            <div class="profileAchievementsHeader">            
-                <h2>Achievements</h2>
-                <p class="profileAchievementsCount">0 / 9</p>
-            </div>
-            <div class="achievementsContainer">
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
+                    <div class="statsItem">
+                        <div class="statItemIconContainer">
+                            <i class="material-symbols-outlined">book</i>
+                        </div>
+                        <div class="statItemInfo">
+                            <p class="statItemValue" id="totalCardsStudied2">0</p>
+                            <p class="statItemLabel">blablabla</p>
+                        </div>
                     </div>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+            </section>
+            <section class="profileAchievements achievementsSection hidden">
+                <div class="profileAchievementsHeader">
+                    <h2>Achievements</h2>
+                    <p class="profileAchievementsCount">0 / 9</p>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+                <div class="achievementsContainer">
+
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+            </section>
+            <section class="profileFriends friendsSection hidden">
+                <div class="profileFriendsHeader">
+                    <span class="profileFriendsHeaderTitle">
+                        <i class="material-symbols-outlined">group</i>
+                        <h2>Friends</h2>
+                    </span>
+                    <button class="addFriendBtn" id="addFriendBtn">
+                        <i class="material-symbols-outlined">person_add</i>
+                        <p>Add Friend</p>
+                    </button>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+
+                <div class="friendsContainer">
+                    <ul class="friendsList">
+                        <!-- Friend items will go here -->
+                        <div class="friendItem">
+                            <div class="friendInfo">
+                                <div class="friendProfilePicContainer">
+                                    <i class="material-symbols-outlined friendProfilePicIcon">person</i>
+                                </div>
+                                <p class="friendScreenname">Friend Username</p>
+                            </div>
+                            <div class="friendStreak">
+                                <i class="material-symbols-outlined">mode_heat</i>
+                                <p class="friendStreakCount">0</p>
+                            </div>
+                        </div>
+                    </ul>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+            </section>
+            <section class="profileSettings settingsSection hidden">
+                <div class="settingsHeader">
+                    <h2 class="settingsTitle">Settings</h2>
+                    <p class="settingsDescription">Configure your preferences</p>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
+                <div class="settingsContainer">
+                    <ul class="settingsList">
+                        <li class="settingsItem">
+                            <span class="settingsItemInfo">
+                                <i class="material-symbols-outlined">notifications</i>
+                                <div class="settingsItemInfoText">
+                                    <p class="settingsItemLabel">Notifications</p>
+                                    <p class="settingsItemDesc">Enable or disable notifications</p>
+                                </div>
+                            </span>
+                            <label class="settingsItemToggle">
+                                <input type="checkbox" id="notificationsToggle" checked>
+                                <span class="toggleCircle"></span>
+                            </label>
+                        </li>
+                    </ul>
                 </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-                <div class="achievementItem">
-                    <div class="achievementItemIconContainer">
-                        <i class="material-symbols-outlined">lock</i>
-                    </div>
-                    <div class="achievementItemInfo">
-                        <p class="achievementItemLabel">Cards Studied</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Profile V2 loaded');
+            let userAchievements = [];
+            const achievementTemplate = `
+                    <div class="achievementItemHint">
+                        <p class="achievementItemHintTitle">First Steps</p>
+                        <p class="achievementItemHintDesc">Study your first flashcard</p>
+                    </div>
+                    <div class="achievementItemIconContainer">
+                        <i class="material-symbols-outlined">lock</i>
+                        </div>
+                    <div class="achievementItemInfo">
+                        <p class="achievementItemLabel">Cards Studied</p>
+                    </div>
+                `;
+            // Load user data
+
+            try {
+                const res = await fetch('/userdata', {
+                    credentials: 'include',
+                    headers: { 'Accept': 'application/json' },
+                    cache: 'no-store' // <--- ADD THIS LINE
+                });
+
+                if (!res.ok) {
+                    console.warn('Failed to load profile:', res.status);
+                    // optional: if 401, redirect to login
+                    if (res.status === 401) window.location.href = '/';
+                    return;
+                }
+
+                const ct = res.headers.get('content-type') || '';
+                if (!ct.includes('application/json')) {
+                    console.warn('Profile endpoint did not return JSON, content-type:', ct);
+                    return;
+                }
+
+                const data = await res.json();
+                console.log('Profile data:', data);
+
+                // update DOM (ensure these elements exist)
+                const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+                set('profilePicIcon', data.icon || 'person');
+                set('profileScreenname', data.username || '');
+                set('profileUsername', '@' + (data.username || 'username'));
+                set('profileBio', data.bio || 'No bio yet. Click edit to add one!');
+                set('levelValue', 'Level ' + (data.level || 1));
+                const xp = data.xp || 0;
+                set('levelProgressNumerical', `${xp} / ${((data.level || 1) * 100)}`);
+                const progressBar = document.getElementById('levelProgressBar');
+                if (progressBar) {
+                    progressBar.style.width = `${(xp / ((data.level || 1) * 100)) * 100}%`;
+                }
+                set('totalXP', `${xp} Total XP`);
+
+                set('currentStreak', data.studyStreak ?? 0);
+                set('longestStreak', data.longestStreak ?? 0);
+                set('totalCardsStudied', data.flashcardsStudied ?? 0);
+
+
+
+                console.log('Profile data loaded successfully');
+            } catch (err) {
+                console.error('Error loading profile:', err);
+            }
+
+            // Load completed achievements first, then all others
+            try {
+                const [userAchRes, allAchRes] = await Promise.all([
+                    fetch('/userachievements', {
+                        credentials: 'include',
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    }),
+                    fetch('/achievements', {
+                        credentials: 'include',
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    })
+                ]);
+
+                if (!userAchRes.ok || !allAchRes.ok) {
+                    console.warn('Failed to load achievements');
+                    return;
+                }
+
+                const userData = await userAchRes.json();
+                const allData = await allAchRes.json();
+                
+                userAchievements = userData.userAchievements || [];
+                const allAchievements = allData.achievements || [];
+                
+                console.log('User Achievements:', userAchievements);
+                console.log('All Achievements:', allAchievements);
+
+                // Get IDs of unlocked achievements
+                const unlockedIds = new Set(userAchievements.map(a => a.id));
+                
+                // Separate unlocked and locked
+                const unlockedAchievements = userAchievements;
+                const lockedAchievements = allAchievements.filter(a => !unlockedIds.has(a.id));
+
+                // Render both
+                const container = document.querySelector('.achievementsContainer');
+                container.innerHTML = '';
+
+                // Render unlocked first
+                unlockedAchievements.forEach(ach => {
+                    const achEl = document.createElement('div');
+                    achEl.classList.add('achievementItem', 'unlocked');
+                    achEl.innerHTML = achievementTemplate;
+                    achEl.querySelector('.achievementItemHintTitle').textContent = ach.name;
+                    achEl.querySelector('.achievementItemHintDesc').textContent = ach.description;
+                    achEl.querySelector('.achievementItemIconContainer i').textContent = ach.icon;
+                    achEl.querySelector('.achievementItemLabel').textContent = ach.name;
+                    container.appendChild(achEl);
+                });
+
+                // Then render locked
+                lockedAchievements.forEach(ach => {
+                    const achEl = document.createElement('div');
+                    achEl.classList.add('achievementItem', 'locked');
+                    achEl.innerHTML = achievementTemplate;
+                    achEl.querySelector('.achievementItemHintTitle').textContent = ach.name;
+                    achEl.querySelector('.achievementItemHintDesc').textContent = ach.description;
+                    achEl.querySelector('.achievementItemIconContainer i').textContent = 'lock';
+                    achEl.querySelector('.achievementItemLabel').textContent = ach.name;
+                    container.appendChild(achEl);
+                });
+
+                document.querySelector('.profileAchievementsCount').textContent = `${unlockedAchievements.length} / ${allAchievements.length}`;
+                console.log('Achievements loaded successfully');
+            } catch (err) {
+                console.error('Error loading achievements:', err);
+            }
+
+        });
+    </script>
 </body>
 
 </html>

@@ -6,6 +6,7 @@ const cors = require("cors");
 const session = require("express-session");
 const pool = require("./db");
 const authRoutes = require("./routes/auth");
+const { isBigIntObject } = require("util/types");
 
 const app = express();
 
@@ -98,10 +99,15 @@ app.get("/userdata", requireLogin, async (req, res) => {
         res.json({
             id: user.id,
             username: user.username,
+            icon: user.icon,
             email: user.email,
+            bio: user.bio || '',
             flashcardsStudied: user.flashcardsstudied || 0,
             achievementsUnlocked: user.achievementsunlocked || 0,
-            studyStreak: user.studystreak || 0
+            studyStreak: user.studystreak || 0,
+            longestStreak: user.longeststreak || 0,
+            level: user.level || 1,
+            xp: user.xp || 0
         });
 
     } catch (err) {
@@ -110,6 +116,32 @@ app.get("/userdata", requireLogin, async (req, res) => {
     }
 });
 
+app.get("/achievements", requireLogin, async (req, res) => {
+    try {
+        const achievementsRes = await pool.query(
+            'SELECT * FROM achievements'
+        );
+        res.json({ achievements: achievementsRes.rows });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+app.get("/userachievements", requireLogin, async (req, res) => {
+    try {
+        const userAchievementsRes = await pool.query(
+            `SELECT a.*, ua.progress, ua.earned_at
+             FROM achievements a
+             INNER JOIN user_achievements ua ON a.id = ua.achievement_id
+             WHERE ua.user_id = $1`,
+            [req.session.userId]
+        );
+        res.json({ userAchievements: userAchievementsRes.rows });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
 
 // Protected HTML pages
 app.get("/:page", requireLogin, (req, res) => {
