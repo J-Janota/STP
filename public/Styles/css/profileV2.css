@@ -1,0 +1,862 @@
+:root {
+  --primary-color: #28bdbd;
+  --secondary-color: #f1b742;
+  --background-color: #f1f9f9;
+  --text-color-dark: #000000;
+  --text-color-light: #8d8d8d;
+  --text-color-white: #ffffff;
+  --level-purple: #9952e0;
+  --font-family: "Roboto", sans-serif;
+  /* Borders */
+  --border-light: 1px solid #d4dfdf;
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-2xl: 2rem;
+  /* Box Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Background Colors */
+  --bg-white: #ffffff;
+  --bg-light-tile: #f3f7f7;
+  --bg-card: #fefffe;
+  --bg-nav-item: #e9efee;
+  --bg-nav-active: #f8fafb;
+  --bg-hover: #e8eeee;
+  --bg-border-color: #d4dfdf;
+  --bg-light-tile-faint: #f7f9f9;
+  --bg-light-gray: #f1f4f5;
+  --bg-secondary-opacity: #f1b742BF;
+}
+
+body {
+  width: 100dw;
+  overflow-x: hidden;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+body main .container .profileHero {
+  border-radius: var(--border-radius-xl);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #e8f9f8, #f4eefd);
+  border: var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+body main .container .profileHero .profileInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+body main .container .profileHero .profileInfo .profilePictureContainer {
+  width: 6rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .profileHero .profileInfo .profilePictureContainer i {
+  font-size: 4rem;
+  color: black;
+}
+@media (max-width: 768px) {
+  body main .container .profileHero .profileInfo .profilePictureContainer i {
+    font-size: 3rem;
+  }
+}
+body main .container .profileHero .profileInfo .profilePictureContainer .customizeAvatarBtn {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+body main .container .profileHero .profileInfo .profileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin: 0;
+  margin-block-start: 0;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer .editProfileButton {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+body main .container .profileHero .profileInfo .profileDetails .profileNameEditContainer .editProfileButton:hover {
+  background-color: var(--secondary-color);
+}
+body main .container .profileHero .profileInfo .profileDetails .profileUsername {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+}
+body main .container .profileHero .profileLevel {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  text-align: right;
+  gap: 0.5rem;
+  width: 25%;
+}
+body main .container .profileHero .profileLevel .levelBox {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-lg);
+  gap: 0.5rem;
+}
+body main .container .profileHero .profileLevel .levelBox .levelText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileHero .profileLevel .levelBox i {
+  font-size: 1.25rem;
+  color: black;
+}
+body main .container .profileHero .profileLevel .levelBox:hover {
+  cursor: default;
+  background-color: var(--primary-color);
+}
+body main .container .profileHero .profileLevel .levelTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--level-purple);
+  margin: 0;
+  width: 100%;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  width: 100%;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress .currentLevelProgressNumerical {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+  margin-block-start: 0.25rem;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress .currentLevelProgressBarContainer {
+  min-width: 0;
+  width: 100%;
+  flex: 0 0 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--secondary-color);
+  overflow: hidden;
+}
+body main .container .profileHero .profileLevel .currentLevelProgress .currentLevelProgressBarContainer .currentLevelProgressBar {
+  height: 100%;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--level-purple);
+  transition: width 0.3s ease;
+  min-width: 0.1rem;
+  min-width: 0.1rem;
+}
+body main .container .profileHero .profileLevel .totalXP {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+  width: 100%;
+}
+body main .container .profileNav {
+  width: 100%;
+  background-color: var(--bg-light-teal);
+  border-radius: var(--border-radius-md);
+}
+body main .container .profileNav .profileNavList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  padding: 0.25rem;
+  box-sizing: border-box;
+}
+body main .container .profileNav .profileNavList li.profileNavListItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  border-radius: var(--border-radius-md);
+  color: var(--text-color-light);
+  cursor: pointer;
+}
+body main .container .profileNav .profileNavList li.profileNavListItem .profileNavListItemLabel {
+  margin: 0;
+  font-weight: 500;
+}
+@media (max-width: 1024px) {
+  body main .container .profileNav .profileNavList li.profileNavListItem .profileNavListItemLabel {
+    display: none;
+  }
+}
+body main .container .profileNav .profileNavList .active {
+  background-color: var(--bg-nav-active);
+  color: var(--text-color-dark) !important;
+}
+body main .container .profileStatistics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-lg);
+}
+body main .container .profileStatistics h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileStatistics .statsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+}
+body main .container .profileStatistics .statsContainer .statsItem {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--bg-light-tile);
+  margin: 0 0.5rem;
+  padding: 1rem 0.75rem;
+  border-radius: var(--border-radius-md);
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemIconContainer {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 20%;
+  background-color: var(--bg-border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemIconContainer i {
+  font-size: 1.5rem;
+  color: black;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo .statItemValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+body main .container .profileStatistics .statsContainer .statsItem .statItemInfo .statItemLabel {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(1) .statItemIconContainer {
+  background-color: rgba(40, 189, 189, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(1) i {
+  color: #28bdbd;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(2) .statItemIconContainer {
+  background-color: rgba(80, 200, 120, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(2) i {
+  color: #50c878;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(3) .statItemIconContainer {
+  background-color: rgba(255, 140, 0, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(3) i {
+  color: #ff8c00;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(4) .statItemIconContainer {
+  background-color: rgba(241, 183, 66, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(4) i {
+  color: #f1b742;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(5) .statItemIconContainer {
+  background-color: rgba(153, 82, 224, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(5) i {
+  color: #9952e0;
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(6) .statItemIconContainer {
+  background-color: rgba(40, 189, 189, 0.15);
+}
+body main .container .profileStatistics .statsContainer .statsItem:nth-child(6) i {
+  color: #28bdbd;
+}
+body main .container .profileStatistics .statsContainer .statsItem:hover {
+  background-color: var(--bg-hover);
+  transition: 0.3s;
+}
+@media (max-width: 1024px) {
+  body main .container .profileStatistics .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body main .container .profileAchievements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-lg);
+}
+body main .container .profileAchievements .profileAchievementsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+body main .container .profileAchievements .profileAchievementsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileAchievements .profileAchievementsHeader .profileAchievementsCount {
+  background-color: var(--secondary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-2xl);
+}
+body main .container .profileAchievements .achievementsContainer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-light-tile);
+  margin: 0 0.5rem;
+  padding: 1.25rem 0.75rem;
+  border-radius: var(--border-radius-md);
+  gap: 0.5rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemHint {
+  display: none;
+  position: absolute;
+  margin-bottom: 11rem;
+  opacity: 0.8;
+  background-color: var(--bg-white);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  box-shadow: var(--shadow-md);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemHint .achievementItemHintTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemHint .achievementItemHintDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-color-light);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemHint p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-color-dark);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem:hover .achievementItemHint {
+  display: block;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemIconContainer {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--bg-border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemIconContainer i {
+  font-size: 1.25rem;
+  color: black;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  gap: 0.5rem;
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem .achievementItemInfo .achievementItemLabel {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem.unlocked {
+  background-color: var(--bg-secondary-opacity);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem.unlocked .achievementItemIconContainer {
+  background-color: var(--secondary-color);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem.unlocked .achievementItemIconContainer i {
+  color: var(--text-color-white);
+}
+body main .container .profileAchievements .achievementsContainer .achievementItem.unlocked .achievementItemInfo .achievementItemLabel {
+  color: var(--text-color-white);
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  body main .container .profileAchievements .achievementsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  body main .container .profileAchievements .achievementsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  body main .container {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  body main .container {
+    width: 90%;
+  }
+}
+body main .container .profileFriends {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+body main .container .profileFriends .profileFriendsHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+body main .container .profileFriends .profileFriendsHeader .profileFriendsHeaderTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+body main .container .profileFriends .profileFriendsHeader .addFriendBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-nav-active);
+  color: var(--text-color-dark);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+body main .container .profileFriends .profileFriendsHeader .addFriendBtn:hover {
+  background-color: var(--secondary-color);
+}
+body main .container .profileFriends .friendsContainer {
+  width: 100%;
+}
+body main .container .profileFriends .friendsContainer .friendsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  background-color: var(--bg-light-tile-faint);
+  border-radius: var(--border-radius-md);
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendInfo .friendProfilePicContainer {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendInfo .friendProfilePicContainer i {
+  font-size: 2rem;
+  color: black;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendInfo .friendScreenname {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendStreak {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  background-color: var(--secondary-color);
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendStreak i {
+  font-size: 1.25rem;
+  color: #ff8c00;
+}
+body main .container .profileFriends .friendsContainer .friendsList .friendItem .friendStreak p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+body main .container .profileSettings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+body main .container .profileSettings .settingsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+body main .container .profileSettings .settingsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+body main .container .profileSettings .settingsHeader .settingsDescription {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin: 0;
+}
+body main .container .profileSettings .settingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemInfo i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemInfo .settingsItemInfoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.25rem;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemInfo .settingsItemInfoText .settingsItemLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemInfo .settingsItemInfoText .settingsItemDesc {
+  font-size: 0.875rem;
+  color: var(--text-color-light);
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemToggle {
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: var(--border-radius-2xl);
+  background-color: var(--bg-border-color);
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemToggle input[type=checkbox] {
+  display: none;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemToggle .toggleCircle {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  transition: left 0.3s ease;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemToggle input[type=checkbox]:checked + .toggleCircle {
+  left: 1.625rem;
+}
+body main .container .profileSettings .settingsContainer .settingsList .settingsItem .settingsItemToggle:has(input[type=checkbox]:checked) {
+  background-color: var(--primary-color);
+}
+body .customizeProfileMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions .avatarOptionsContainer {
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  display: grid;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions .avatarOptionsContainer .avatarOptionItem {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background-color: var(--bg-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions .avatarOptionsContainer .avatarOptionItem i {
+  font-size: 2rem;
+  color: black;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions .avatarOptionsContainer .avatarOptionItem:hover {
+  background-color: var(--secondary-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .avatarOptions .avatarOptionsContainer .customizeOptionActive {
+  border: 2px solid var(--primary-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange .backgroundColorOptionsContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange .backgroundColorOptionsContainer .bgColorOptionItem {
+  flex: 1;
+  aspect-ratio: 1/1;
+  border-radius: var(--border-radius-lg);
+  border: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange .backgroundColorOptionsContainer .bgColorOptionItem .bgColorOptionCircle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange .backgroundColorOptionsContainer .bgColorOptionItem:hover {
+  background-color: var(--secondary-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .backgroundColorChange .backgroundColorOptionsContainer .customizeOptionActive {
+  border: 2px solid var(--primary-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange .borderStyleOptionsContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange .borderStyleOptionsContainer .borderStyleOptionItem {
+  flex: 1;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background-color: var(--bg-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange .borderStyleOptionsContainer .borderStyleOptionItem .borderStyleOptionPreview {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--bg-border-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange .borderStyleOptionsContainer .borderStyleOptionItem:hover {
+  background-color: var(--secondary-color);
+}
+body .customizeProfileMenu .customizeProfileMenuContainer .customizeOptions .borderStyleChange .borderStyleOptionsContainer .customizeOptionActive {
+  border: 2px solid var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=profileV2.css.map */
