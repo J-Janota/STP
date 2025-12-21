@@ -23,10 +23,10 @@ main .dashboardCards .dashboardCard {
   flex: 1 1 calc(25% - 2rem);
 }
 main .dashboardCards .dashboardCard a.dashboardCardLink {
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 1.5rem 2rem 2rem 2rem;
-  border-radius: 0.5rem;
-  border: 1px solid #d4dfdf;
+  border-radius: var(--border-radius-md);
+  border: var(--border-light);
   text-align: center;
   min-width: 15rem;
   flex-wrap: nowrap;
@@ -43,7 +43,7 @@ main .dashboardCards .dashboardCard a.dashboardCardLink:nth-child(3) .dashboardC
   color: var(--secondary-color);
 }
 main .dashboardCards .dashboardCard a.dashboardCardLink:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -81,9 +81,9 @@ main .dashboardCards .dashboardCard a.dashboardCardLink .additionalText {
 }
 main .myDecks {
   margin-top: 2rem;
-  background-color: white;
-  border: 1px solid #d4dfdf;
-  border-radius: 1rem;
+  background-color: var(--bg-white);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
   min-height: 25rem;
   width: 100%;
   display: flex;
@@ -107,7 +107,7 @@ main .myDecks .myDecksInfo a.addDeckButton {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   background-color: var(--primary-color);
   color: var(--text-color-white);
   border: none;

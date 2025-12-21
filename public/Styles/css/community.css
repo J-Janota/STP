@@ -6,6 +6,16 @@
   --text-color-light: #8d8d8d;
   --text-color-white: #ffffff;
   --font-family: "Roboto", sans-serif;
+  /* Borders */
+  --border-light: 1px solid #d4dfdf;
+  /* Border Radius */
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  /* Box Shadows */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0 8px 20px rgba(0, 0, 0, 0.08);
+  /* Background Colors */
+  --bg-white: #ffffff;
 }
 
 main {
@@ -39,8 +49,8 @@ main .filtering .searchbar .search-icon {
 main .filtering .searchbar input[type=text] {
   width: calc(100% - 50px);
   padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-  border: 1px solid #d4dfdf;
-  border-radius: 0.5rem;
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
   font-size: 1rem;
   font-family: var(--font-family);
 }
@@ -62,9 +72,9 @@ main .filtering .dropdown .dropbtn {
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.75rem;
-  border: 1px solid #d4dfdf;
+  border: var(--border-light);
   background: var(--text-color-white);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   cursor: pointer;
   color: var(--text-color-dark);
   font-size: 0.95rem;
@@ -92,9 +102,9 @@ main .filtering .dropdown .dropdown-content {
   top: calc(100% + 0.5rem);
   left: 0;
   background: var(--text-color-white);
-  border: 1px solid #d4dfdf;
-  border-radius: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-dropdown);
   z-index: 100;
   padding: 0.25rem;
   opacity: 0;
@@ -111,7 +121,7 @@ main .filtering .dropdown .dropdown-content .filter-option {
   box-sizing: border-box;
   padding: 0.45rem 0.6rem;
   color: var(--text-color-dark);
-  border-radius: 0.75rem;
+  border-radius: var(--border-radius-lg);
   font-size: 0.95rem;
   text-decoration: none;
   text-align: left;

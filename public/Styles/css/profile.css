@@ -6,6 +6,13 @@
   --text-color-light: #8d8d8d;
   --text-color-white: #ffffff;
   --font-family: "Roboto", sans-serif;
+  /* Borders */
+  --border-light: 1px solid #d4dfdf;
+  /* Border Radius */
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  /* Background Colors */
+  --bg-white: #ffffff;
 }
 
 nav {
@@ -26,7 +33,7 @@ nav ul li.navbar-list-item a.navbar-link {
   gap: 0.5rem;
   box-sizing: border-box;
   padding: 0 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   height: 2.5rem;
   width: 100%;
   text-decoration: none;
@@ -61,10 +68,10 @@ main .container h1 {
   color: var(--text-color-dark);
 }
 main .container .profileSection {
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid #d4dfdf;
+  border-radius: var(--border-radius-lg);
+  border: var(--border-light);
   width: 100%;
   box-sizing: border-box;
 }
@@ -98,9 +105,9 @@ main .container .stats .statsCards {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  border: 1px solid #d4dfdf;
-  border-radius: 1rem;
+  background-color: var(--bg-white);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
   width: 100%;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
@@ -112,7 +119,7 @@ main .container .stats .statsCards .statsCard {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   padding: 2rem 0.5rem;
 }
 main .container .stats .statsCards .statsCard .statValue {

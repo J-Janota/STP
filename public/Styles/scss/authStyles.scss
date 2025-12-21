@@ -6,6 +6,20 @@
     --text-color-light: #8d8d8d;
     --text-color-white: #ffffff;
     --font-family: 'Roboto', sans-serif;
+    
+    /* Borders */
+    --border-light: 1px solid #d4dfdf;
+    
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Box Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
 }
 
 body {
@@ -23,11 +37,11 @@ form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: #ffffff;
+    background-color: var(--bg-white);
     padding: 2rem 2rem 1rem 2rem;
     min-width: 20rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
 
     h1 {
         margin: 0;
@@ -51,16 +65,16 @@ form {
     input {
         padding: 0.5rem;
         background-color: var(--background-color);
-        border-radius: 0.5rem;
+        border-radius: var(--border-radius-md);
         font-size: 0.8rem;
-        border: 1px solid #d4dfdf;
+        border: var(--border-light);
         box-sizing: border-box;
         font-family: var(--font-family);
 
         &:focus {
             outline: 1px solid transparent;
             border: 2px solid var(--primary-color);
-            background-color: #ffffff;
+            background-color: var(--bg-white);
         }
     }
 
@@ -70,7 +84,7 @@ form {
         color: var(--text-color-white);
         border: none;
         padding: 0.75rem;
-        border-radius: 0.25rem;
+        border-radius: var(--border-radius-sm);
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s ease;
@@ -81,7 +95,7 @@ form {
         font-size: 0.875rem;
         text-align: center;
         padding: 1rem;
-        border-radius: 0.5rem;
+        border-radius: var(--border-radius-md);
         text-decoration: none;
         font-weight: 600;
 

@@ -6,6 +6,31 @@
   --text-color-light: #8d8d8d;
   --text-color-white: #ffffff;
   --font-family: "Roboto", sans-serif;
+  /* Borders */
+  --border-light: 1px solid #d4dfdf;
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  /* Box Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-dropdown: 0 8px 20px rgba(0, 0, 0, 0.08);
+  /* Background Colors */
+  --bg-white: #ffffff;
+  --bg-light-gray: #fbfdfc;
+  --bg-input: #f1f9f9;
+  --bg-filter: #e9eeef;
+  --bg-light-tile: #f3f7f7;
+  --bg-card: #fefffe;
+  --bg-nav-active: #f8fafb;
+  --bg-light-teal: #e9efee;
+  --bg-hover: #e8eeee;
+  --bg-border-color: #d4dfdf;
+  --bg-light-teal-faint: #eaf3f2;
+  --bg-light-green: #e8f5e9;
 }
 
 body {
@@ -38,7 +63,7 @@ main {
 
 .mainNav {
   background-color: #fbfdfc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   min-height: 5rem;
   display: flex;
   align-items: center;
@@ -47,7 +72,7 @@ main {
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1;
   width: 100%;
   box-sizing: border-box;
 }
@@ -71,7 +96,7 @@ main {
   gap: 0.5rem;
   box-sizing: border-box;
   padding: 0 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   color: var(--text-color-dark);
 }
 .mainNav ul.navbar-list li.navbar-list-item a.navbar-link .label {
@@ -87,33 +112,33 @@ main {
 }
 
 @media (max-width: 1024px) {
-  nav {
+  nav.mainNav {
     padding: 0 1rem;
   }
-  nav ul {
+  nav.mainNav ul {
     gap: 1rem;
   }
-  nav ul li {
+  nav.mainNav ul li {
     padding: 0 0.5rem;
   }
-  nav ul li .label {
+  nav.mainNav ul li .label {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 425px) {
-  nav {
+  nav.mainNav {
     padding: 0 1rem;
   }
-  nav .hero {
+  nav.mainNav .hero {
     font-size: 1rem;
   }
-  nav ul {
+  nav.mainNav ul {
     gap: 0.5rem;
   }
-  nav ul li.navbar-list-item a.navbar-bar-link {
+  nav.mainNav ul li.navbar-list-item a.navbar-bar-link {
     padding: 0 0.125rem;
   }
-  nav ul li.navbar-list-item a.navbar-bar-link .label {
+  nav.mainNav ul li.navbar-list-item a.navbar-bar-link .label {
     font-size: 0.8rem;
   }
 }/*# sourceMappingURL=styles.css.map */

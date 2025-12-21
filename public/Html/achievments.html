@@ -37,28 +37,30 @@
                     </span>
                 </span>
                 <span class="summaryCardValue">0/9</span>
-                <span class="progressBar"></span>
+                <div class="progressBarContainer">
+                    <span class="progressBar"></span>
+                </div>
             </div>
-            <div class="summaryCard">
-                <span class="summaryCardInfo">
-                    <h2>Current Streak</h2>
-                    <span class="material-symbols-outlined">
-                        local_fire_department
+                <div class="summaryCard">
+                    <span class="summaryCardInfo">
+                        <h2>Current Streak</h2>
+                        <span class="material-symbols-outlined">
+                            local_fire_department
+                        </span>
                     </span>
-                </span>
-                <span class="summaryCardValue">0 days</span>
-                <span class="additionalText">Longest: 0 Days</span>
-            </div>
-            <div class="summaryCard">
-                <span class="summaryCardInfo">
-                    <h2>Cards Studied</h2>
-                    <span class="material-symbols-outlined">
-                        import_contacts
+                    <span class="summaryCardValue">0 days</span>
+                    <span class="additionalText">Longest: 0 Days</span>
+                </div>
+                <div class="summaryCard">
+                    <span class="summaryCardInfo">
+                        <h2>Cards Studied</h2>
+                        <span class="material-symbols-outlined">
+                            import_contacts
+                        </span>
                     </span>
-                </span>
-                <span class="summaryCardValue">0</span>
-                <span class="additionalText">0 sessions</span>
-            </div>
+                    <span class="summaryCardValue">0</span>
+                    <span class="additionalText">0 sessions</span>
+                </div>
         </section>
         <ul class="achievementFilter">
             <li class="achievementFilterItem unselectable">
@@ -78,7 +80,12 @@
             </li>
         </ul>
         <section class="achievementCards">
-            <div class="achievementCard studyCard">
+            <!-- Achievement cards will be dynamically inserted here -->
+        </section>
+    </main>
+    <script src="../Scripts/index.js"></script>
+    <script>
+        const achievementCardTemplate = `
                 <span class="material-symbols-outlined achievementIcon">
                     import_contacts
                 </span>
@@ -86,110 +93,210 @@
                     <h2>First Steps</h2>
                     <p>Study your first flashcard</p>
                 </span>
-                <span class="progressBar"></span>
+                <div class="progressBarContainer">
+                    <span class="progressBar"></span>
+                </div>
                 <span class="percentageProgress">0% complete</span>
-            </div>
+        `;
 
-            <div class="achievementCard studyCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    neurology
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Dedicated Learner</h2>
-                    <p>Study 50 flashcards</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+        let allCards = [];
 
-            <div class="achievementCard studyCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    school
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Knowledge Seeker</h2>
-                    <p>Study 200 flashcards</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch all data in parallel
+                const [userDataRes, userAchRes, allAchRes] = await Promise.all([
+                    fetch('/userdata', {
+                        credentials: 'include',
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    }),
+                    fetch('/userachievements', {
+                        credentials: 'include',
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    }),
+                    fetch('/achievements', {
+                        credentials: 'include',
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    })
+                ]);
 
-            <div class="achievementCard streakCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    local_fire_department
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Streak Starter</h2>
-                    <p>Keep a 3-day study streak</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                if (!userDataRes.ok || !userAchRes.ok || !allAchRes.ok) {
+                    console.warn('Failed to load data');
+                    return;
+                }
 
-            <div class="achievementCard streakCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    workspace_premium
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Week Warrior</h2>
-                    <p>Keep a 7-day study streak</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                const userData = await userDataRes.json();
+                const userAchData = await userAchRes.json();
+                const allAchData = await allAchRes.json();
 
-            <div class="achievementCard streakCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    trophy
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Unstoppable</h2>
-                    <p>Keep a 30-day study streak</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                const userAchievements = userAchData.userAchievements || [];
+                const allAchievements = allAchData.achievements || [];
 
-            <div class="achievementCard socialCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    add
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Deck Creator</h2>
-                    <p>Create your first deck</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                console.log('User Data:', userData);
+                console.log('User Achievements:', userAchievements);
+                console.log('All Achievements:', allAchievements);
 
-            <div class="achievementCard socialCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    newsstand
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Curator</h2>
-                    <p>Create 5 decks</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                // Create a map of achievement_id -> user progress
+                const progressMap = new Map();
+                userAchievements.forEach(ua => {
+                    progressMap.set(ua.id, {
+                        progress: ua.progress || 0,
+                        earned_at: ua.earned_at
+                    });
+                });
 
-            <div class="achievementCard masteryCard">
-                <span class="material-symbols-outlined achievementIcon">
-                    kid_star
-                </span>
-                <span class="achievementCardInfo">
-                    <h2>Perfectionist</h2>
-                    <p>Score perfect on a deck</p>
-                </span>
-                <span class="progressBar"></span>
-                <span class="percentageProgress">0% complete</span>
-            </div>
+                // Update summary cards
+                const unlockedCount = userAchievements.filter(ua => (ua.progress || 0) >= (ua.goal || ua.target || 1)).length;
+                const totalCount = allAchievements.length;
+                const progressPercent = totalCount > 0 ? (unlockedCount / totalCount) * 100 : 0;
 
-            </div>
-        </section>
-    </main>
-    <script src="../Scripts/index.js"></script>
+                document.querySelector('.summaryCards .summaryCard:nth-child(1) .summaryCardValue').textContent = `${unlockedCount}/${totalCount}`;
+                document.querySelector('.summaryCards .summaryCard:nth-child(1) .progressBar').style.width = `${progressPercent}%`;
+
+                document.querySelector('.summaryCards .summaryCard:nth-child(2) .summaryCardValue').textContent = `${userData.studyStreak || 0} days`;
+                document.querySelector('.summaryCards .summaryCard:nth-child(2) .additionalText').textContent = `Longest: ${userData.longestStreak || 0} Days`;
+
+                document.querySelector('.summaryCards .summaryCard:nth-child(3) .summaryCardValue').textContent = userData.flashcardsStudied || 0;
+                // sessions placeholder - update if you have session data
+                document.querySelector('.summaryCards .summaryCard:nth-child(3) .additionalText').textContent = `0 sessions`;
+
+                // Separate unlocked and locked achievements
+                const unlockedAchievements = [];
+                const lockedAchievements = [];
+
+                allAchievements.forEach(achievement => {
+                    const userProgress = progressMap.get(achievement.id);
+                    const currentProgress = userProgress ? userProgress.progress : 0;
+                    const targetProgress = achievement.goal || achievement.target || 1;
+                    const isUnlocked = currentProgress >= targetProgress;
+
+                    if (isUnlocked) {
+                        unlockedAchievements.push(achievement);
+                    } else {
+                        lockedAchievements.push(achievement);
+                    }
+                });
+
+                // Render achievements
+                const achievementCardsContainer = document.querySelector('.achievementCards');
+                achievementCardsContainer.innerHTML = '';
+
+                // Render unlocked first
+                unlockedAchievements.forEach(achievement => {
+                    const achEl = document.createElement('div');
+                    achEl.classList.add('achievementCard', 'unlocked');
+
+                    // Add category class
+                    const categoryMap = {
+                        study: 'studyCard',
+                        streak: 'streakCard',
+                        social: 'socialCard',
+                        mastery: 'masteryCard'
+                    };
+                    const categoryClass = categoryMap[(achievement.category || '').toLowerCase()];
+                    if (categoryClass) achEl.classList.add(categoryClass);
+
+                    achEl.innerHTML = achievementCardTemplate;
+                    achEl.querySelector('.achievementIcon').textContent = achievement.icon;
+                    achEl.querySelector('.achievementCardInfo h2').textContent = achievement.name || achievement.title;
+                    achEl.querySelector('.achievementCardInfo p').textContent = achievement.description;
+
+                    const progressBar = achEl.querySelector('.progressBar');
+                    const percentageProgress = achEl.querySelector('.percentageProgress');
+                    progressBar.style.width = '100%';
+                    percentageProgress.textContent = '100% complete';
+
+                    achievementCardsContainer.appendChild(achEl);
+                });
+
+                // Then render locked
+                lockedAchievements.forEach(achievement => {
+                    const achEl = document.createElement('div');
+                    achEl.classList.add('achievementCard', 'locked');
+
+                    // Add category class
+                    const categoryMap = {
+                        study: 'studyCard',
+                        streak: 'streakCard',
+                        social: 'socialCard',
+                        mastery: 'masteryCard'
+                    };
+                    const categoryClass = categoryMap[(achievement.category || '').toLowerCase()];
+                    if (categoryClass) achEl.classList.add(categoryClass);
+
+                    achEl.innerHTML = achievementCardTemplate;
+                    achEl.querySelector('.achievementIcon').textContent = 'lock';
+                    achEl.querySelector('.achievementCardInfo h2').textContent = achievement.name || achievement.title;
+                    achEl.querySelector('.achievementCardInfo p').textContent = achievement.description;
+
+                    const progressBar = achEl.querySelector('.progressBar');
+                    const percentageProgress = achEl.querySelector('.percentageProgress');
+
+                    // Get user's current progress for this achievement
+                    const userProgress = progressMap.get(achievement.id);
+                    const currentProgress = userProgress ? userProgress.progress : 0;
+                    const targetProgress = achievement.goal || 1;
+                    const progressPercent = Math.min((currentProgress / targetProgress) * 100, 100);
+
+                    progressBar.style.width = `${progressPercent}%`;
+                    percentageProgress.textContent = `${Math.floor(progressPercent)}% complete`;
+
+                    achievementCardsContainer.appendChild(achEl);
+                });
+
+                // Update allCards for filtering
+                allCards = document.querySelectorAll('.achievementCard');
+
+                console.log('Achievements loaded successfully');
+            } catch (error) {
+                console.error('Error fetching achievements:', error);
+            }
+        });
+
+        function filterCards(category) {
+            allCards.forEach(card => card.classList.add('hidden'));
+
+            if (category === 'all') {
+                allCards.forEach(card => card.classList.remove('hidden'));
+                return;
+            }
+
+            const categoryMap = {
+                study: 'studyCard',
+                streak: 'streakCard',
+                social: 'socialCard',
+                mastery: 'masteryCard'
+            };
+
+            const cardClass = categoryMap[category];
+            if (!cardClass) return;
+
+            allCards.forEach(card => {
+                if (card.classList.contains(cardClass)) {
+                    card.classList.remove('hidden');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.achievementFilter');
+
+            container.addEventListener('click', (e) => {
+                const btn = e.target.closest('.filterButton');
+                if (!btn) return;
+
+                container.querySelectorAll('.filterButton').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.textContent.trim().toLowerCase();
+                filterCards(category);
+            });
+        });
+
+
+    </script>
 </body>
 
 </html>

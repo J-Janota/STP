@@ -15,10 +15,12 @@ router.post("/register", async (req, res) => {
     
     const hash = await bcrypt.hash(password, 10);
     
-    await pool.query(
-      "INSERT INTO users(email, password_hash, username) VALUES($1, $2, $3)",
+    const result = await pool.query(
+      "INSERT INTO users(email, password_hash, username) VALUES($1, $2, $3) RETURNING id",
       [email, hash, username]
     );
+    const user = result.rows[0];
+
 
     req.session.userId = user.id;
     
@@ -26,6 +28,7 @@ router.post("/register", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
+
   }
 });
 

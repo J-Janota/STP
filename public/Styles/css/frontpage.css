@@ -1,3 +1,20 @@
+:root {
+  --primary-color: #28bdbd;
+  --secondary-color: #f1b742;
+  --background-color: #f1f9f9;
+  --text-color-dark: #000000;
+  --text-color-light: #8d8d8d;
+  --text-color-white: #ffffff;
+  --font-family: "Roboto", sans-serif;
+  /* Border Radius */
+  --border-radius-md: 0.5rem;
+  /* Box Shadows */
+  --shadow-sm: 0 0 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Background Colors */
+  --bg-white: #ffffff;
+}
+
 .mainNav {
   background-color: var(--background-color);
   box-shadow: none;
@@ -8,8 +25,8 @@
   justify-content: center;
   gap: 0.5rem;
   box-sizing: border-box;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
+  padding: 1rem !important;
+  border-radius: var(--border-radius-md);
   height: 2.5rem;
   width: 100%;
   text-decoration: none;
@@ -34,12 +51,14 @@
 }
 
 main {
+  position: relative;
+  top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem 0;
   gap: 2rem;
+  margin-top: 2rem;
 }
 main h1 {
   font-size: 3.5rem;
@@ -55,7 +74,7 @@ main a.get-started-button {
   padding: 0.75rem 2rem;
   font-size: 1.25rem;
   font-weight: 500;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   background-color: var(--primary-color);
   color: var(--text-color-white);
   border: none;
@@ -75,10 +94,10 @@ main .infoCards {
   justify-content: center;
 }
 main .infoCards .infoCard {
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
   width: 15rem;
   text-align: center;
   display: flex;
@@ -88,7 +107,7 @@ main .infoCards .infoCard {
   gap: 1rem;
 }
 main .infoCards .infoCard:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
   transition: 0.3s;
   cursor: pointer;
 }
