@@ -5,7 +5,7 @@ const pool = require("../db");
 const session = require('express-session');
 
 // REGISTER
-router.post("/register", async (req, res) => {
+router.post("/auth/register", async (req, res) => {
   const { email, password, username } = req.body;
 
   try {
@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
 });
 
 // LOGIN
-router.post("/login", async (req, res) => {
+router.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
